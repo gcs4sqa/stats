@@ -1,32 +1,29 @@
-import fs from 'fs';
+import { CsvFileReader } from './CsvFlleReader';
+import { MatchResult } from './MatchResult';
 
-const matches = fs.readFileSync('football.csv', {
-    encoding: 'utf-8'
-}).split('\n')
-.map((row: string):string[] => {
-    return row.split(',')
-});
+const reader = new CsvFileReader('football.csv');
+reader.read();
+
+console.log(reader.data);
 
 let manUnitedWins = 0;
 
-const homewin = 'H';
-const awaywin = 'A';
-const draw = 'D';
 
-for ( let match of matches){
-    if( match[1] === 'Man United' && match[5] === homewin){
+
+for ( let match of reader.data){
+    if( match[1] === 'Man United' && match[5] === MatchResult.HomeWin){
         manUnitedWins++;
-    }else if (match[2] === 'Man United' && match[5] === awaywin){
+    }else if (match[2] === 'Man United' && match[5] === MatchResult.AwayWin){
         manUnitedWins++;
     }
 }
 
 let liverpoolwins = 0;
 
-for (let match of matches){
-    if (match[1] === 'Liverpool' && match[5] === homewin){
+for (let match of reader.data){
+    if (match[1] === 'Liverpool' && match[5] === MatchResult.HomeWin){
         liverpoolwins++;
-    } else if(match[2] === 'Liverpool' && match[5] === awaywin){
+    } else if(match[2] === 'Liverpool' && match[5] === MatchResult.AwayWin){
         liverpoolwins++;
     }
     
