@@ -1,4 +1,4 @@
-import { CsvFileReader } from './CsvFlleReader';
+/*import { CsvFileReader } from './CsvFlleReader';
 import { dateStringTodate }  from './utils';
 import { MatchResult } from './MatchResult';
 
@@ -16,4 +16,4 @@ export class MatchReader extends CsvFileReader<MatchData> {
             row[6]
         ];
     }
-}
+}*/

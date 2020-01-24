@@ -1,4 +1,4 @@
-import fs from 'fs';
+/*import fs from 'fs';
 
 export abstract class CsvFileReader<T> {
     data : T[] = [];
@@ -14,4 +14,4 @@ export abstract class CsvFileReader<T> {
             return row.split(',')
         }).map(this.mapRow);
     }
-}
+}*/

@@ -1,36 +1,20 @@
 "use strict";
-var __extends = (this && this.__extends) || (function () {
-    var extendStatics = function (d, b) {
-        extendStatics = Object.setPrototypeOf ||
-            ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
-            function (d, b) { for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p]; };
-        return extendStatics(d, b);
-    };
-    return function (d, b) {
-        extendStatics(d, b);
-        function __() { this.constructor = d; }
-        d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
-    };
-})();
-Object.defineProperty(exports, "__esModule", { value: true });
-var CsvFlleReader_1 = require("./CsvFlleReader");
-var utils_1 = require("./utils");
-var MatchReader = /** @class */ (function (_super) {
-    __extends(MatchReader, _super);
-    function MatchReader() {
-        return _super !== null && _super.apply(this, arguments) || this;
-    }
-    MatchReader.prototype.mapRow = function (row) {
+/*import { CsvFileReader } from './CsvFlleReader';
+import { dateStringTodate }  from './utils';
+import { MatchResult } from './MatchResult';
+
+type MatchData = [Date, string, string, number, number, MatchResult, string];
+
+export class MatchReader extends CsvFileReader<MatchData> {
+    mapRow(row: string[]): MatchData {
         return [
-            utils_1.dateStringTodate(row[0]),
+            dateStringTodate(row[0]),
             row[1],
             row[2],
             parseInt(row[3]),
             parseInt(row[4]),
-            row[5],
+            row[5] as MatchResult,
             row[6]
         ];
-    };
-    return MatchReader;
-}(CsvFlleReader_1.CsvFileReader));
-exports.MatchReader = MatchReader;
+    }
+}*/ 
